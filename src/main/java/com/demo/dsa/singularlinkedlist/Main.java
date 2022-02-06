@@ -1,4 +1,4 @@
-package com.demo.dsa.linkedlists;
+package com.demo.dsa.singularlinkedlist;
 
 public class Main {
 
