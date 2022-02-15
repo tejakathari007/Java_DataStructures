@@ -17,7 +17,15 @@ public class SingleLinkedList {
 	public Node insert(String value, int location) {
 		if (this.head == null)
 			return insertFirstElement(value);
-		else if (location > 0 && size > location) {
+		else if (location == 1) {
+			Node node = new Node(value, head);
+			head = node;
+		} else if (location >= size) {
+			Node node = new Node(value, null);
+			tail.setNext(node);
+			tail = node;
+			size++;
+		} else if (location > 1 && size < location) {
 			Node temp = head;
 			for (int i = 1; i < size; i++) {
 				if (i == location)
@@ -26,13 +34,10 @@ public class SingleLinkedList {
 			}
 			Node node = new Node(value, temp.getNext());
 			temp.setNext(node);
+			if (location == 1)
+				temp = head;
 			size++;
 
-		} else if (location >= size) {
-			Node node = new Node(value, null);
-			tail.setNext(node);
-			tail = node;
-			size++;
 		}
 
 		return head;
