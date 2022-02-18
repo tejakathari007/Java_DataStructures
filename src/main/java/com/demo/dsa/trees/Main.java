@@ -56,6 +56,47 @@ public class Main {
 //		binaryTree.deleteNode("N4");
 //		binaryTree.levelOrderTraversal();
 
+//		BinaryTreeArray binaryTree = new BinaryTreeArray(9);
+//		binaryTree.insert("N1");
+//		binaryTree.insert("N2");
+//		binaryTree.insert("N3");
+//		binaryTree.insert("N4");
+//		binaryTree.insert("N5");
+//		binaryTree.insert("N6");
+//		binaryTree.insert("N7");	
+//		binaryTree.insert("N8");
+//		binaryTree.insert("N9");
+//		System.out.println();
+
+//		binaryTree.preOrderTraversal(1);
+//		binaryTree.inOrderTraversal(1);
+//		binaryTree.postOrderTraversal(1);
+
+//		binaryTree.levelOrderTraversal();
+
+//		binaryTree.search("N8");
+
+		BinarySearchTreeLinkedList bst = new BinarySearchTreeLinkedList();
+		bst.insert(70);
+		bst.insert(50);
+		bst.insert(90);
+		bst.insert(30);
+		bst.insert(60);
+		bst.insert(80);
+		bst.insert(100);
+		bst.insert(20);
+		bst.insert(40);
+		
+		System.out.println();
+//		bst.preOrderTraversal(bst.root);
+//		bst.inOrderTraversal(bst.root);
+//		bst.postOrderTraversal(bst.root);
+//		bst.levelOrderTravsersal(bst.root);
+//		System.out.println(bst.search(bst.root, 10).value);
+		bst.levelOrderTravsersal(bst.root);
+		bst.delete(bst.root, 90);
+		System.out.println();
+		bst.levelOrderTravsersal(bst.root);
 
 	}
 

@@ -7,6 +7,7 @@ public class BinaryTreeLinkedList {
 
 	BinaryNode root = null;
 
+	//Depth First Search
 	// TC: O(n) SC: O(n) for recursion
 	// Root - Left - Right
 	public void preOrderTraversal(BinaryNode node) {
@@ -18,6 +19,7 @@ public class BinaryTreeLinkedList {
 
 	}
 
+	//Depth First Search
 	// TC: O(n) SC: O(n) for recursion
 	// Left - Root - Right
 	public void inOrderTraversal(BinaryNode node) {
@@ -29,6 +31,7 @@ public class BinaryTreeLinkedList {
 		inOrderTraversal(node.right);
 	}
 
+	//Depth First Search
 	// TC: O(n) SC: O(n) for recursion
 	// Left - Right - Root
 	public void postOrderTraversal(BinaryNode node) {
@@ -40,6 +43,7 @@ public class BinaryTreeLinkedList {
 		System.out.println(node.value);
 	}
 
+	//Breadth First Search
 	// TC: O(n) SC: O(n)
 	// same level nodes
 	// preferered as queue performs better than stack(recursion)
