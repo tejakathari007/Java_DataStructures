@@ -3,22 +3,22 @@ package com.demo.dsa.hashing;
 public class Main {
 
 	public static void main(String[] args) {
-		DirectChaining d = new DirectChaining(15);
-		d.insertHashTable("sword");
-		d.insertHashTable("sword");
-		d.insertHashTable("test");
-		d.delete("sword");
-		d.display();
+//		DirectChaining d = new DirectChaining(15);
+//		d.insertHashTable("sword");
+//		d.insertHashTable("sword");
+//		d.insertHashTable("test");
+//		d.delete("sword");
+//		d.display();
 
-//		LinkedList<String> list = new LinkedList<>();
-//		list.add("teja");
-//		list.add("kathari");
-//		list.add("last");
-//
-//		list.forEach((value) -> {
-//			System.out.println(value);
-//
-//		});
+		LinearProbing linear = new LinearProbing(10);
+		linear.insert("sword");
+		linear.insert("test");
+		linear.insert("red");
+		linear.insert("sword");
+
+		linear.search("sword");
+		linear.delete("sword");
+		linear.display();
 
 	}
 }

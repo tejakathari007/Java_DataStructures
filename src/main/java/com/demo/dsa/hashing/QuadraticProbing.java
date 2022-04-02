@@ -2,12 +2,12 @@ package com.demo.dsa.hashing;
 
 import java.util.ArrayList;
 
-public class LinearProbing {
+public class QuadraticProbing {
 
 	String[] hashTable;
 	int usedCellNumber;
 
-	public LinearProbing(int size) {
+	public QuadraticProbing(int size) {
 		hashTable = new String[size];
 		usedCellNumber = 0;
 	}
@@ -47,15 +47,16 @@ public class LinearProbing {
 			rehashKeys(word);
 		else {
 			int index = modASCIIHashFunction(word, hashTable.length);
+			int counter = 0;
 			for (int i = index; i < index + hashTable.length; i++) {
-				int newIndex = i % hashTable.length;
-				if (hashTable[newIndex] == null) {
-					hashTable[newIndex] = word;
-					System.out.println("inserting word " + word + " at index :" + newIndex);
+				int newIndex = (index + (counter * counter)) % hashTable.length;
+				if (hashTable[newIndex] != null && hashTable[newIndex].equals(word)) {
+					hashTable[newIndex] = null;
 					break;
-				}
-
+				}else
+					System.out.println("newIndex already occupied, trying next");
 			}
+			counter++;
 		}
 		usedCellNumber++;
 	}
